@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sanjeev Kumar – MCA (AI &amp; ML) student, data analytics and prediction</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F3F6FA;--ink:#12203A;--muted:#4A5B78;--accent:#2F54EB;--line:#C9D3E3;--mark:#FFD84D;--panel:#E8EEF7;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0F1626;--ink:#E6ECF7;--muted:#9BAAC6;--accent:#8FA8FF;--line:#26334D;--mark:#FFD84D;--panel:#16203A;color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#0F1626;--ink:#E6ECF7;--muted:#9BAAC6;--accent:#8FA8FF;--line:#26334D;--mark:#FFD84D;--panel:#16203A;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:48px 48px;background-attachment:fixed}
+body::after{content:"";position:fixed;inset:0;background:var(--bg);opacity:.86;z-index:-1}
+h1,h2,h3{font-family:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;line-height:1.1;margin:0}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;font-weight:500}
+nav div{display:flex;gap:22px;flex-wrap:wrap}
+nav a{color:var(--ink);text-decoration:none}
+nav a:hover{text-decoration:underline}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center;padding:48px 0 72px}
+.hero h1{font-size:clamp(3rem,9vw,6rem);font-weight:800;letter-spacing:-.03em}
+.hero h1 span{background:linear-gradient(transparent 62%,var(--mark) 62%);padding:0 4px}
+.hero p{max-width:34ch;color:var(--muted);font-size:1.15rem;margin:20px 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 20px;border:2px solid var(--ink);color:var(--ink);text-decoration:none;font-weight:500;border-radius:6px}
+.btn.main{background:var(--ink);color:var(--bg)}
+.btn:hover{border-color:var(--accent)}
+.plot{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px}
+.plot svg{width:100%;height:auto;display:block}
+.plot figcaption{font-size:.85rem;color:var(--muted);padding:6px 4px 0}
+.dot{fill:var(--accent);opacity:.75}
+.fit{stroke:var(--ink);stroke-width:2.5;fill:none;stroke-dasharray:420;stroke-dashoffset:420;animation:draw 1.6s .4s ease-out forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.axis{stroke:var(--muted);stroke-width:1.5}
+.lbl{fill:var(--muted);font:12px "IBM Plex Sans",sans-serif}
+section{padding:56px 0;border-top:1px solid var(--line)}
+section>h2{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:28px}
+.proj{display:grid;grid-template-columns:200px 1fr;gap:12px 32px;padding:28px 0;border-bottom:1px dashed var(--line)}
+.proj:last-child{border-bottom:0}
+.proj h3{font-size:1.5rem}
+.tag{color:var(--muted);font-size:.95rem}
+.proj ul{margin:12px 0 0;padding-left:20px}
+.proj li{margin:4px 0;max-width:62ch}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;padding:0;list-style:none}
+.chips li{margin:0;padding:3px 12px;border:1px solid var(--line);background:var(--panel);border-radius:99px;font-size:.88rem}
+.tl{position:relative;margin:0;padding:0 0 0 28px;list-style:none;border-left:3px solid var(--accent)}
+.tl li{position:relative;padding-bottom:30px}
+.tl li::before{content:"";position:absolute;left:-37px;top:7px;width:15px;height:15px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+.tl li.now::before{background:var(--mark)}
+.tl h3{font-size:1.25rem}
+.tl p{margin:4px 0 0;color:var(--muted)}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px}
+.skills h3{font-size:1.1rem;margin-bottom:10px}
+.skills .chips{margin-top:0}
+.contact p{max-width:52ch;color:var(--muted)}
+.certs{margin:0 0 20px;padding-left:20px}.certs li{margin:6px 0}
+footer{padding:28px 0 40px;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;padding-top:24px}
+  .proj{grid-template-columns:1fr}
+  body{font-size:16px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .fit{animation:none;stroke-dashoffset:0}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav aria-label="Main">
+    <strong>Sanjeev Kumar</strong>
+    <div><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <h1>Hi, I’m <span>Sanjeev.</span></h1>
+      <p>MCA student in AI &amp; Machine Learning, building models that turn raw data into predictions and decisions.</p>
+      <div class="btns">
+        <a class="btn main" href="#projects">See my projects</a>
+        <a class="btn" href="#contact">Get in touch</a>
+      </div>
+    </div>
+    <figure class="plot" style="margin:0">
+      <svg id="plot" viewBox="0 0 360 280" role="img" aria-label="Scatter plot of data points with a fitted regression line rising from left to right">
+        <line class="axis" x1="30" y1="250" x2="345" y2="250"/><line class="axis" x1="30" y1="250" x2="30" y2="15"/>
+        <text class="lbl" x="150" y="272">median income</text>
+        <text class="lbl" transform="translate(14 170) rotate(-90)">house price</text>
+        <g id="dots"></g>
+        <path class="fit" d="M36 228 L340 40"/>
+      </svg>
+      <figcaption>The idea behind my housing project: fit a line (and better models) to price data.</figcaption>
+    </figure>
+  </header>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <article class="proj">
+      <div><span class="tag">Machine learning<br>Regression</span></div>
+      <div>
+        <h3>California Housing Price Prediction</h3>
+        <ul>
+          <li>Explored California housing data to find the patterns and factors that influence house prices.</li>
+          <li>Handled preprocessing, exploratory analysis and visualization, then built a machine learning model to predict prices.</li><li>Evaluated the model and interpreted the results to understand how well it predicts.</li>
+        </ul>
+        <ul class="chips"><li>Python</li><li>NumPy</li><li>Pandas</li><li>Matplotlib</li><li>Seaborn</li><li>Scikit-Learn</li></ul>
+      </div>
+    </article>
+    <article class="proj">
+      <div><span class="tag">Data analytics<br>Business insight</span></div>
+      <div>
+        <h3>IPL Performance &amp; Revenue Analysis</h3>
+        <ul>
+          <li>Analyzed IPL performance and revenue-related data to find trends and useful insights.</li>
+          <li>Used data analysis and visualization to communicate the findings clearly.</li>
+        </ul>
+        <ul class="chips"><li>Data analytics</li><li>Python</li><li>Data visualization</li></ul>
+      </div>
+    </article>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <ol class="tl">
+      <li>
+        <h3>Artificial Intelligence Intern, Academor</h3>
+        <p>Bengaluru · July 2024 – September 2024</p>
+        <p>Built foundational machine learning models and studied how to evaluate them, ran data analysis to support AI projects, wrote a case study on AI across industries, and developed a Python game.</p>
+      </li>
+      <li>
+        <h3>TSP Analyst Intern, Drona Maps</h3>
+        <p>Delhi</p>
+        <p>Cleaned, validated and organized transportation and location datasets to find patterns and fix inconsistencies, and supported reporting with geospatial data.</p>
+      </li>
+      <li>
+        <h3>Web Design Intern, Shape My Skills</h3>
+        <p>Noida · July 2023 – August 2023</p>
+        <p>Built responsive pages and interactive front-end components, including a to-do list, with HTML, CSS and JavaScript.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <ol class="tl">
+      <li class="now">
+        <h3>MCA, Artificial Intelligence &amp; Machine Learning</h3>
+        <p>KR Mangalam University, Sohna, Gurugram · pursuing</p>
+      </li>
+      <li>
+        <h3>BCA, Cloud Computing</h3>
+        <p>Shree Guru Gobind Singh Tricentenary University, Gurugram · 2022 – 2025 · CGPA 7.06</p>
+      </li>
+    </ol>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div><h3>Programming and web</h3><ul class="chips"><li>Python</li><li>SQL</li><li>JavaScript</li><li>HTML</li><li>CSS</li></ul></div>
+      <div><h3>AI and machine learning</h3><ul class="chips"><li>Predictive modeling</li><li>Data preprocessing</li><li>Model evaluation</li><li>NumPy</li><li>Pandas</li><li>Scikit-Learn</li></ul></div>
+      <div><h3>Analytics and BI</h3><ul class="chips"><li>Power BI</li><li>Tableau</li><li>EDA</li><li>Matplotlib</li><li>Seaborn</li></ul></div>
+      <div><h3>Tools and core CS</h3><ul class="chips"><li>Jupyter</li><li>Git</li><li>GitHub</li><li>DSA</li><li>OOP</li><li>DBMS</li></ul></div>
+    </div>
+  </section>
+
+  <section id="certifications">
+    <h2>Certifications and languages</h2>
+    <ul class="certs">
+      <li>IBM – SQL and Relational Databases 101</li>
+      <li>Accenture – Data Analytics and Visualization</li>
+      <li>Cisco – Data Analytics Essentials</li>
+      <li>Artificial Intelligence – industry-recognized certification</li>
+    </ul>
+    <p class="tag">English (professional) · Hindi (native) · German (B1)</p>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>I’m looking for internships and entry-level roles in data analysis and machine learning. Send me a message and I’ll reply.</p>
+    <div class="btns">
+      <a class="btn main" href="mailto:sanjeev40240@gmail.com">sanjeev40240@gmail.com</a>
+      <a class="btn" href="https://github.com/sanjeevjangra001">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/sanjeev-jangra-490468270/">LinkedIn</a>
+    </div>
+  </section>
+
+  <footer>© 2026 Sanjeev Kumar · Delhi, India</footer>
+</div>
+<script>
+(function(){
+  var g=document.getElementById('dots'),s=7,ns='http://www.w3.org/2000/svg',out='';
+  function r(){s=(s*9301+49297)%233280;return s/233280}
+  for(var i=0;i<46;i++){
+    var t=r(),x=40+t*295,y=228-t*186+(r()-.5)*70;
+    y=Math.max(22,Math.min(244,y));
+    out+='<circle class="dot" cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="4"/>';
+  }
+  g.innerHTML=out;
+})();
+</script>
+</body>
+</html>
